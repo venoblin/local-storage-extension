@@ -1,10 +1,5 @@
-let storage = null
-
-chrome.runtime.sendMessage({
-  from: 'popup',
-  subject: 'localstorage'
-}).then((res) => {
-  storage = res
+chrome.runtime.onMessage.addListener((msg, sender, response) => {
+  if (msg.storage) {
+    console.log(msg.storage)
+  }
 })
-
-console.log(storage)
