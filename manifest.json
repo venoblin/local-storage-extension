@@ -4,12 +4,8 @@
   "version": "1.0",
   "description": "View items in local storage",
   "permissions": [
-    "storage",
-    "activeTab"
+    "storage"
   ],
-  "background": {
-    "service_worker": "background.js"
-  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
