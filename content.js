@@ -1,5 +1,6 @@
-function getLocalStorage() {
-  return localStorage
-}
+chrome.runtime.onMessage.addListener((msg, sender, response) => {
+  if ((msg.from === 'popup') && (msg.subject === 'olcalstorage')) {
 
-console.log(getLocalStorage())
+    response(localStorage)
+  }
+})
